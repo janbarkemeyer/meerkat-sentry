@@ -7,11 +7,11 @@
 <meta name="description" content="Cheap roof cameras that confirm low-flying drones together, track them in 3D and give an operator one clear alert. Built at the European Defense Tech Hackathon, Taipei 2026.">
 <meta property="og:title" content="Meerkat Sentry · Every roof keeps watch.">
 <meta property="og:description" content="Cheap roof cameras that confirm low-flying drones together and warn the people in their path. EDTH Taipei 2026, Team 08.">
-<meta property="og:image" content="https://janbarkemeyer.github.io/meerkat-sentry/media/04-warn.jpg">
+<meta property="og:image" content="https://janbarkemeyer.github.io/meerkat-sentry/04-warn.jpg">
 <meta property="og:url" content="https://janbarkemeyer.github.io/meerkat-sentry/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="media/logo.svg">
+<link rel="icon" href="logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
@@ -62,7 +62,7 @@ footer{padding:32px 0 56px;border-top:1px solid var(--line);color:var(--ink3);fo
 <div class="wrap">
 
 <header>
-  <img src="media/logo.svg" alt="Meerkat Sentry logo: a robot meerkat with camera eyes">
+  <img src="logo.svg" alt="Meerkat Sentry logo: a robot meerkat with camera eyes">
   <div>
     <h1>Meerkat Sentry</h1>
     <div class="tag">Every roof keeps watch. <span class="zh">每個屋頂，都在守望。</span></div>
@@ -72,14 +72,14 @@ footer{padding:32px 0 56px;border-top:1px solid var(--line);color:var(--ink3);fo
 
 <p class="lead">In a city, small drones fly below the roofs, where radar cannot see. Meerkat Sentry puts cheap camera boxes on many roofs. When three roofs see the same object, it is a confirmed drone, located in 3D. An operator gets one alert with the reason, and with one click the phones in the drone's path say: go inside.</p>
 
-<video controls playsinline preload="metadata" poster="media/04-warn.jpg" src="media/vision.mp4"></video>
+<video controls playsinline preload="metadata" poster="04-warn.jpg" src="vision.mp4"></video>
 <p class="cap">Vision · 33 s · simulation of the finished system in a fictional neighbourhood</p>
 
 <div class="btns">
-  <a class="btn primary" href="demo/meerkat_vision.html">Try the live demo<small>on a laptop · press “Play demo”</small></a>
-  <a class="btn" href="media/real-test.mp4">Real outdoor test<small>video · 24 s · 4 Oct 2026</small></a>
-  <a class="btn" href="demo/meerkat_today.html">What already works<small>real measurements from our lab</small></a>
-  <a class="btn" href="media/meerkat-sentry-deck.pdf">Pitch deck<small>PDF · 19 slides</small></a>
+  <a class="btn primary" href="meerkat_vision.html">Try the live demo<small>on a laptop · press “Play demo”</small></a>
+  <a class="btn" href="real-test.mp4">Real outdoor test<small>video · 24 s · 4 Oct 2026</small></a>
+  <a class="btn" href="meerkat_today.html">What already works<small>real measurements from our lab</small></a>
+  <a class="btn" href="meerkat-sentry-deck.pdf">Pitch deck<small>PDF · 19 slides</small></a>
 </div>
 
 <section>
@@ -91,7 +91,7 @@ footer{padding:32px 0 56px;border-top:1px solid var(--line);color:var(--ink3);fo
     <div class="card" style="--c:var(--amber)"><span class="n">3 · OPERATOR</span><h3>Decide</h3><p>One alert with the reason: speed, course, time to target. Accept, change or reject each recommendation. Every click is logged.</p></div>
     <div class="card" style="--c:var(--red)"><span class="n">4 · PHONES</span><h3>Warn</h3><p>People in the path are told to go inside. In the real product through Taiwan's Public Warning System, like an earthquake alert. Responders are warned too.</p></div>
   </div>
-  <figure style="margin-top:24px"><img src="media/07-detection.jpg" alt="How detection works: each fixed camera compares consecutive frames; pixels that changed are grouped into a moving candidate" loading="lazy"></figure>
+  <figure style="margin-top:24px"><img src="07-detection.jpg" alt="How detection works: each fixed camera compares consecutive frames; pixels that changed are grouped into a moving candidate" loading="lazy"></figure>
 </section>
 
 <section>
@@ -109,12 +109,12 @@ footer{padding:32px 0 56px;border-top:1px solid var(--line);color:var(--ink3);fo
       </ul>
     </div>
     <figure>
-      <video controls playsinline muted preload="metadata" poster="media/00-lab.jpg" src="media/lab-real.mp4"></video>
+      <video controls playsinline muted preload="metadata" poster="00-lab.jpg" src="lab-real.mp4"></video>
       <figcaption>Real footage from our lab test, 3 Oct 2026: all three cameras mark the same drone.</figcaption>
     </figure>
   </div>
   <figure style="margin-top:24px">
-    <video controls playsinline muted preload="metadata" poster="media/08-real-test.jpg" src="media/real-test.mp4"></video>
+    <video controls playsinline muted preload="metadata" poster="08-real-test.jpg" src="real-test.mp4"></video>
     <figcaption>Real, outdoors on campus, 4 Oct 2026: a camera spots the drone against the sky, an image check scores it, the operator presses “Confirm drone”, and the phone gets the alert. This alert came from one station; fusing several roofs into one 3D track outdoors is the next step.</figcaption>
   </figure>
 </section>
@@ -124,12 +124,12 @@ footer{padding:32px 0 56px;border-top:1px solid var(--line);color:var(--ink3);fo
   <h2>The same software, for a city</h2>
   <p class="lead" style="margin-bottom:0">24 roof boxes, a drone heading for a substation, a second drone waiting for the responders. Pre-approving the warning gives people 34 s instead of 26 s to get inside.</p>
   <div class="shots">
-    <figure><img src="media/01-confirm.jpg" alt="Fusion panel: four roofs below the threshold alone, fused score above it" loading="lazy"><figcaption>1 · Roofs agree: a confirmed drone</figcaption></figure>
-    <figure><img src="media/03-decide.jpg" alt="Decision panel with recommendations accepted, modified and pre-approved" loading="lazy"><figcaption>2 · The operator decides in 4 clicks</figcaption></figure>
-    <figure><img src="media/04-warn.jpg" alt="Phone lock screen showing GO INSIDE NOW in English and Chinese" loading="lazy"><figcaption>3 · Phones in the path: GO INSIDE NOW</figcaption></figure>
-    <figure><img src="media/05-protect.jpg" alt="Second drone heading for Team Bravo, which pulls back" loading="lazy"><figcaption>4 · A second drone waits for the responders</figcaption></figure>
-    <figure><img src="media/06-learn.jpg" alt="Data analysis: approach directions, heights, speeds, second strikes" loading="lazy"><figcaption>5 · Every incident teaches the network: tracks only, no video</figcaption></figure>
-    <figure><img src="media/02-alert.jpg" alt="Map with drone turning toward the substation, alert with reason" loading="lazy"><figcaption>An alert always says why</figcaption></figure>
+    <figure><img src="01-confirm.jpg" alt="Fusion panel: four roofs below the threshold alone, fused score above it" loading="lazy"><figcaption>1 · Roofs agree: a confirmed drone</figcaption></figure>
+    <figure><img src="03-decide.jpg" alt="Decision panel with recommendations accepted, modified and pre-approved" loading="lazy"><figcaption>2 · The operator decides in 4 clicks</figcaption></figure>
+    <figure><img src="04-warn.jpg" alt="Phone lock screen showing GO INSIDE NOW in English and Chinese" loading="lazy"><figcaption>3 · Phones in the path: GO INSIDE NOW</figcaption></figure>
+    <figure><img src="05-protect.jpg" alt="Second drone heading for Team Bravo, which pulls back" loading="lazy"><figcaption>4 · A second drone waits for the responders</figcaption></figure>
+    <figure><img src="06-learn.jpg" alt="Data analysis: approach directions, heights, speeds, second strikes" loading="lazy"><figcaption>5 · Every incident teaches the network: tracks only, no video</figcaption></figure>
+    <figure><img src="02-alert.jpg" alt="Map with drone turning toward the substation, alert with reason" loading="lazy"><figcaption>An alert always says why</figcaption></figure>
   </div>
 </section>
 

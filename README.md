@@ -1,4 +1,4 @@
-<p align="center"><img src="media/logo.svg" width="120" alt="Meerkat Sentry logo"></p>
+<p align="center"><img src="logo.svg" width="120" alt="Meerkat Sentry logo"></p>
 
 <h1 align="center">Meerkat Sentry</h1>
 <p align="center"><b>Every roof keeps watch.</b> 每個屋頂，都在守望。</p>
@@ -6,12 +6,12 @@
 
 <p align="center">
   <a href="https://janbarkemeyer.github.io/meerkat-sentry/"><b>Website and video</b></a> ·
-  <a href="https://janbarkemeyer.github.io/meerkat-sentry/demo/meerkat_vision.html"><b>Live demo</b></a> (laptop) ·
-  <a href="media/real-test.mp4"><b>Real outdoor test (24 s)</b></a> ·
-  <a href="media/meerkat-sentry-deck.pdf"><b>Pitch deck (PDF)</b></a>
+  <a href="https://janbarkemeyer.github.io/meerkat-sentry/meerkat_vision.html"><b>Live demo</b></a> (laptop) ·
+  <a href="real-test.mp4"><b>Real outdoor test (24 s)</b></a> ·
+  <a href="meerkat-sentry-deck.pdf"><b>Pitch deck (PDF)</b></a>
 </p>
 
-![Meerkat Sentry: a drone heads for a substation, the operator has pre-approved the warning, phones in its path say GO INSIDE NOW](media/hero.gif)
+![Meerkat Sentry: a drone heads for a substation, the operator has pre-approved the warning, phones in its path say GO INSIDE NOW](hero.gif)
 <p align="center"><sub>Simulation of the finished system in a fictional neighbourhood. The lab system below is real.</sub></p>
 
 ## The problem
@@ -27,7 +27,7 @@ Cheap camera boxes on many roofs look along the streets.
 3. **Decide.** An operator gets one alert with the reason in plain words (speed, course, time to target, how many roofs see it) and accepts, changes or rejects each recommendation: track, warn, take cover, send a team. Every decision is logged.
 4. **Warn.** People in the drone's path are told to go inside. In the real product this goes through Taiwan's Public Warning System, like an earthquake alert; our demo uses a Telegram group. Responders get their own warning.
 
-![How detection works: each fixed camera compares consecutive frames; pixels that changed are grouped into a moving candidate](media/07-detection.jpg)
+![How detection works: each fixed camera compares consecutive frames; pixels that changed are grouped into a moving candidate](07-detection.jpg)
 
 We add to radar where it is blind; we do not replace it. No weapon control: warnings and team allocation only.
 
@@ -46,30 +46,30 @@ We add to radar where it is blind; we do not replace it. No weapon control: warn
 
 ### Real test, 4 Oct 2026
 
-<a href="media/real-test.mp4"><img src="media/08-real-test.jpg" width="640" alt="Real outdoor test: the operator reviews a possible drone and confirms it; the phone receives the alert"></a>
+<a href="real-test.mp4"><img src="08-real-test.jpg" width="640" alt="Real outdoor test: the operator reviews a possible drone and confirms it; the phone receives the alert"></a>
 
-<sub>Real, outdoors on campus: a camera spots the drone against the sky, an image check scores it, the operator presses <b>Confirm drone</b>, and the phone gets the alert through our Telegram demo group. <a href="media/real-test.mp4">Video (24 s)</a></sub>
+<sub>Real, outdoors on campus: a camera spots the drone against the sky, an image check scores it, the operator presses <b>Confirm drone</b>, and the phone gets the alert through our Telegram demo group. <a href="real-test.mp4">Video (24 s)</a></sub>
 
 <table>
 <tr>
-<td width="50%"><img src="media/00-lab.jpg" alt="Three lab cameras mark the same drone"><br><sub><b>Real:</b> our lab test, 3 Oct 2026. All three cameras mark the same drone. <a href="media/lab-real.mp4">Video (8 s)</a></sub></td>
-<td width="50%"><img src="media/04-warn.jpg" alt="Phone lock screen: GO INSIDE NOW in English and Chinese"><br><sub><b>Simulation:</b> phones in the drone's path get GO INSIDE NOW. <a href="media/vision.mp4">Video (33 s)</a></sub></td>
+<td width="50%"><img src="00-lab.jpg" alt="Three lab cameras mark the same drone"><br><sub><b>Real:</b> our lab test, 3 Oct 2026. All three cameras mark the same drone. <a href="lab-real.mp4">Video (8 s)</a></sub></td>
+<td width="50%"><img src="04-warn.jpg" alt="Phone lock screen: GO INSIDE NOW in English and Chinese"><br><sub><b>Simulation:</b> phones in the drone's path get GO INSIDE NOW. <a href="vision.mp4">Video (33 s)</a></sub></td>
 </tr>
 <tr>
-<td><img src="media/03-decide.jpg" alt="Operator decision panel"><br><sub>The operator decides in 4 clicks. Pre-approving the warning gives people <b>34 s instead of 26 s</b> to get inside.</sub></td>
-<td><img src="media/05-protect.jpg" alt="Second drone heading for the responders"><br><sub>A second drone waits for the responders. The network sees it waiting and warns Team Bravo in time.</sub></td>
+<td><img src="03-decide.jpg" alt="Operator decision panel"><br><sub>The operator decides in 4 clicks. Pre-approving the warning gives people <b>34 s instead of 26 s</b> to get inside.</sub></td>
+<td><img src="05-protect.jpg" alt="Second drone heading for the responders"><br><sub>A second drone waits for the responders. The network sees it waiting and warns Team Bravo in time.</sub></td>
 </tr>
 <tr>
-<td><img src="media/01-confirm.jpg" alt="Fusion panel: weak alone, strong together"><br><sub>Weak alone, strong together: each roof below the threshold, the fused score above it.</sub></td>
-<td><img src="media/06-learn.jpg" alt="Data analysis view"><br><sub>Every incident teaches the network: where drones come from, where they wait, where a roof is missing. Tracks only, never video, never sold.</sub></td>
+<td><img src="01-confirm.jpg" alt="Fusion panel: weak alone, strong together"><br><sub>Weak alone, strong together: each roof below the threshold, the fused score above it.</sub></td>
+<td><img src="06-learn.jpg" alt="Data analysis view"><br><sub>Every incident teaches the network: where drones come from, where they wait, where a roof is missing. Tracks only, never video, never sold.</sub></td>
 </tr>
 </table>
 
 ## Try it
 
-**In the browser:** open the [live demo](https://janbarkemeyer.github.io/meerkat-sentry/demo/meerkat_vision.html) on a laptop and press **Play demo**. The **H** key shows the shortcuts and **W** switches to [what already works](https://janbarkemeyer.github.io/meerkat-sentry/demo/meerkat_today.html), the real lab measurements. Both pages are single HTML files that run offline, with no install and no internet.
+**In the browser:** open the [live demo](https://janbarkemeyer.github.io/meerkat-sentry/meerkat_vision.html) on a laptop and press **Play demo**. The **H** key shows the shortcuts and **W** switches to [what already works](https://janbarkemeyer.github.io/meerkat-sentry/meerkat_today.html), the real lab measurements. Both pages are single HTML files that run offline, with no install and no internet.
 
-**Locally:** download `demo/meerkat_vision.html` and double-click it.
+**Locally:** download `meerkat_vision.html` and double-click it.
 
 ## Honest status
 
@@ -85,12 +85,13 @@ Our customers are **households**. Main case: a community project in which neighb
 ## Repository
 
 ```
-index.html                 website: video, how it works, screenshots, team
-demo/meerkat_vision.html   live demo: the city concept (simulation, guided presentation)
-demo/meerkat_today.html    what already works: real lab measurements
-src/dashboard_src.html     source of both demo pages (plain HTML, CSS and JavaScript, no framework)
-src/build.py               builds demo/ from the source and embeds the fonts: python3 src/build.py
-media/                     videos, screenshots, logo, pitch deck (PDF)
+index.html             website: video, how it works, screenshots, team
+meerkat_vision.html    live demo: the city concept (simulation, guided presentation)
+meerkat_today.html     what already works: real lab measurements
+dashboard_src.html     source of both demo pages (plain HTML, CSS and JavaScript, no framework)
+build.py               rebuilds both demo pages from the source and embeds the fonts: python3 build.py
+*.mp4, *.jpg, *.gif    videos and screenshots
+meerkat-sentry-deck.pdf  pitch deck
 ```
 
 The camera nodes and the fusion controller were built by Edoardo Dominikus and Sean Ching and are not in this repository. The dashboard reads the controller's live feed (`/live.json`) and applies its own rules: a track only counts as a drone when 3 stations support it, and nothing below 1.4 m (people) raises an alert.
