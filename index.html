@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meerkat Sentry</title>
+<meta name="description" content="Cheap camera boxes on many roofs spot small drones where radar cannot see. Honorable Mention at the Taiwan Defense Tech Hackathon 2026, Team 08.">
+<meta property="og:title" content="Meerkat Sentry · Every roof keeps watch.">
+<meta property="og:description" content="Camera boxes on many roofs spot small drones below the radar; the city control room checks the alert, the warning authority warns the public. Honorable Mention, EDTH Taipei 2026.">
+<meta property="og:image" content="https://janbarkemeyer.github.io/meerkat-sentry/media/04-warn.jpg">
+<meta property="og:url" content="https://janbarkemeyer.github.io/meerkat-sentry/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="media/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A1017;--panel:#101923;--line:#2B3A4C;--ink:#E8EEF4;--ink2:#98A8B9;--ink3:#7F8C99;--cyan:#5CC8FF;--amber:#FFC23A;--red:#FF4545;--green:#57D68D;--violet:#A78BFA}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "IBM Plex Sans",system-ui,sans-serif}
+a{color:var(--cyan)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{padding:48px 0 24px;display:flex;gap:28px;align-items:center}
+header img{width:112px;height:auto;flex:none}
+h1,h2,h3{font-family:"Barlow Condensed",sans-serif;font-weight:700;line-height:1.05;margin:0}
+h1{font-size:clamp(44px,8vw,72px)}
+.tag{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:clamp(24px,4vw,32px);color:var(--cyan);margin-top:6px}
+.meta{font:400 13px/1.5 "IBM Plex Mono",monospace;letter-spacing:.12em;color:var(--ink3);margin-top:12px;text-transform:uppercase}
+.meta b{color:var(--green);font-weight:400}
+.lead{font-size:clamp(18px,2.4vw,21px);color:var(--ink2);max-width:780px;margin:8px 0 24px}
+video{width:100%;display:block;border:1px solid var(--line);border-radius:6px;background:#000}
+.cap{font:400 13px/1.4 "IBM Plex Mono",monospace;color:var(--ink3);margin:8px 0 0}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 8px}
+.btn{display:inline-block;padding:12px 18px;border-radius:4px;border:1px solid var(--cyan);color:var(--ink);text-decoration:none;font-weight:500}
+.btn.primary{background:var(--cyan);color:#06121B}
+.btn small{display:block;font-weight:400;font-size:13px;opacity:.75}
+section{padding:40px 0;border-top:1px solid var(--line)}
+section>h2{font-size:clamp(30px,4.5vw,40px);margin-bottom:6px}
+.eyebrow{font:400 13px/1.4 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--c,var(--cyan));padding:16px;border-radius:4px}
+.card h3{font-size:24px;margin:2px 0 6px}
+.card p{margin:0;color:var(--ink2);font-size:15px}
+.card .n{font:400 12px/1 "IBM Plex Mono",monospace;letter-spacing:.12em;color:var(--c,var(--cyan))}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+@media (max-width:760px){.shots{grid-template-columns:1fr}.two{grid-template-columns:1fr}header{flex-direction:column;align-items:flex-start;gap:12px}header img{width:84px}}
+ul.clean{list-style:none;padding:0;margin:12px 0 0}
+ul.clean li{padding:8px 0;border-bottom:1px solid var(--line);color:var(--ink2)}
+ul.clean li b{color:var(--ink);font-weight:500}
+.real{color:var(--green)} .sim{color:var(--amber)}
+figure{margin:0}
+figure img{width:100%;display:block;border:1px solid var(--line);border-radius:4px}
+figcaption{font-size:14px;color:var(--ink3);margin-top:6px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:20px;margin-top:20px}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 24px;margin-top:16px}
+.team div{padding:10px 0;border-bottom:1px solid var(--line)}
+.team div span{display:block;font-size:14px;color:var(--ink3)}
+.note{font-size:14px;color:var(--ink3)}
+.lbl{font:400 12px/1 "IBM Plex Mono",monospace;letter-spacing:.1em;margin-left:6px}
+footer{padding:32px 0 56px;border-top:1px solid var(--line);color:var(--ink3);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="media/logo.svg" alt="Meerkat Sentry logo: a robot meerkat with camera eyes">
+  <div>
+    <h1>Meerkat Sentry</h1>
+    <div class="tag">Every roof keeps watch.</div>
+    <div class="meta"><b>Honorable Mention</b> · Taiwan Defense Tech Hackathon · Taipei, 2–4 Oct 2026<br>Team 08 · Challenge 04</div>
+  </div>
+</header>
+
+<p class="note" style="margin:0 0 16px">Camera nodes and fusion: Edoardo Dominikus, Sean Ching · Dashboard, simulation and videos: Jan Barkemeyer · Deck and strategy: Jan Barkemeyer, Robin Fischer · Pitch: Robin Fischer</p>
+
+<p class="lead">Small drones fly below the roofs, where radar cannot see. Meerkat Sentry puts cheap camera boxes on many roofs. When at least three roofs see the same object, it is a confirmed drone. A person in the city control room checks the alert, and the approved alert goes to the authority that warns the public. Residents host the boxes, the city runs the network. We complement radar in the city.</p>
+
+<video controls playsinline preload="metadata" poster="media/04-warn.jpg" src="media/video-2-vision.mp4"></video>
+<p class="cap">Video 2 · the vision · 85 s · simulation of the finished system in a fictional neighbourhood</p>
+
+<div class="btns">
+  <a class="btn primary" href="demo/meerkat_vision.html">Try the live demo<small>on a laptop · plays on its own</small></a>
+  <a class="btn" href="media/video-1-real-test.mp4">Video 1 · real outdoor test<small>33 s · 4 Oct 2026</small></a>
+  <a class="btn" href="demo/meerkat_today.html">What already works<small>the real lab system and its measurements</small></a>
+  <a class="btn" href="media/meerkat-sentry-deck.pdf">Deck<small>PDF · 22 pages</small></a>
+</div>
+
+<section>
+  <div class="eyebrow" style="color:var(--cyan)">The problem</div>
+  <h2>In a city, small drones fly below the roofs</h2>
+  <p class="lead" style="margin-bottom:0">Small drones already disrupt cities: Taoyuan airport stopped its runway in 2023 and 2026, European airports closed for hours in 2025, drones flew over Kinmen outposts in 2022. The lesson from Ukraine: cheap drones hit power stations first, then the crews who come to repair them.</p>
+  <p class="note">Sources: Focus Taiwan (2023), Taipei Times (2026), Kyiv Independent and Wikipedia (2025), Jamestown Foundation (2022); full list in the deck.</p>
+</section>
+
+<section>
+  <div class="eyebrow" style="color:var(--cyan)">How it works</div>
+  <h2>Weak alone, strong together</h2>
+  <div class="grid">
+    <div class="card"><span class="n">1 · ROOF BOX</span><h3>See</h3><p>2–6 cheap cameras per roof, facing the sky. Video stays in the box; only detections leave it.</p></div>
+    <div class="card"><span class="n">2 · NETWORK</span><h3>Confirm</h3><p>2 roofs give a 3D position, 3 confirm a drone. Birds, balls and drones that broadcast Remote ID are filtered, unless they head for a protected site.</p></div>
+    <div class="card" style="--c:var(--violet)"><span class="n">3 · CITY CONTROL ROOM</span><h3>Decide</h3><p>One alert with the reason: speed, heading, time to target. A person accepts, rejects or changes each recommendation. Every click is logged.</p></div>
+    <div class="card" style="--c:var(--red)"><span class="n">4 · WARNING</span><h3>Warn</h3><p>The approved alert goes to the authority that warns the public, like an earthquake alert. Our demo uses a Telegram group.</p></div>
+  </div>
+  <figure style="margin-top:24px"><img src="media/07-detection.jpg" alt="How detection works: each fixed camera compares consecutive frames; pixels that changed are grouped into a moving candidate" loading="lazy"></figure>
+</section>
+
+<section>
+  <div class="two">
+    <div>
+      <div class="eyebrow real">Real · built at the hackathon</div>
+      <h2>Three ordinary cameras, one drone</h2>
+      <ul class="clean">
+        <li><b>3 Raspberry Pi camera nodes</b> and a controller that fuses their views into one 3D track</li>
+        <li><b>15–20 fps</b>, 23 ms median from camera to fusion</li>
+        <li><b>20 of 20</b> indoor test flights detected</li>
+        <li><b>Operator dashboard</b>: alert rules, recommendations, accept / reject / modify, decision log</li>
+        <li><b>Phone alert</b> to real phones through a Telegram demo group</li>
+        <li><b>Outdoor test, 4 Oct:</b> one station and an image check; the operator confirms, the phone gets the alert. Outdoor fusion of 3 roofs is not yet tested.</li>
+      </ul>
+    </div>
+    <figure>
+      <video controls playsinline muted preload="metadata" poster="media/00-lab.jpg" src="media/lab-real.mp4"></video>
+      <figcaption>Real footage from our lab test, 3 Oct 2026: all three cameras mark the same drone.</figcaption>
+    </figure>
+  </div>
+  <figure style="margin-top:24px">
+    <video controls playsinline preload="metadata" poster="media/08-real-test.jpg" src="media/video-1-real-test.mp4"></video>
+    <figcaption>Video 1 · real outdoor test on campus, 4 Oct 2026: a camera sees the drone against the sky, an image check scores it, the operator confirms, and the phone gets the alert through our Telegram demo channel.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="eyebrow sim">Simulation · fictional neighbourhood</div>
+  <h2>The same software, for a city neighbourhood</h2>
+  <p class="lead" style="margin-bottom:0">24 roof boxes, a drone heading for a substation, a second drone aimed at the responders who come to help. Approving the warning early gives people 34 s instead of 26 s to get inside (simulated, drone at ~50 km/h).</p>
+  <div class="shots">
+    <figure><img src="media/01-confirm.jpg" alt="Fusion panel: each roof below the threshold alone, the fused score above it" loading="lazy"><figcaption>1 · Roofs confirm a drone</figcaption></figure>
+    <figure><img src="media/02-alert.jpg" alt="The drone turns towards the substation; one alert with the reason" loading="lazy"><figcaption>2 · It turns towards the substation: one alert, with the reason</figcaption></figure>
+    <figure><img src="media/03-decide.jpg" alt="Decision panel: recommendations accepted, changed and pre-approved" loading="lazy"><figcaption>3 · The operator makes four decisions</figcaption></figure>
+    <figure><img src="media/04-warn.jpg" alt="Phone lock screen: GO INSIDE NOW" loading="lazy"><figcaption>4 · Phones in its path: GO INSIDE NOW</figcaption></figure>
+    <figure><img src="media/05-protect.jpg" alt="A second drone heads for Team Bravo, which pulls back" loading="lazy"><figcaption>5 · Drone 2 goes for the responders; the team pulls back in time</figcaption></figure>
+    <figure><img src="media/06-learn.jpg" alt="Data analysis: six kinds of simulated data, from one site to all of Taiwan, each with a use" loading="lazy"><figcaption>6 · All clear, then every attack becomes data (simulated)</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow" style="color:var(--cyan)">Who does what · target model</div>
+  <h2>One network, two uses</h2>
+  <div class="grid">
+    <div class="card" style="--c:var(--green)"><span class="n">RESIDENTS</span><h3>Host a roof box</h3><p>Roof and power, free; they get warnings for their block and can add their own box at cost.</p></div>
+    <div class="card" style="--c:var(--violet)"><span class="n">CITY CONTROL ROOM</span><h3>Runs the network</h3><p>The city or civil defence pays for the base network and the service. Target buyer, not yet validated.</p></div>
+    <div class="card" style="--c:var(--red)"><span class="n">WARNING AUTHORITY</span><h3>Warns the public</h3><p>NCDR or Ministry of National Defense. Gets a confirmed track with the reason.</p></div>
+    <div class="card" style="--c:var(--ink2)"><span class="n">MILITARY &amp; RADAR</span><h3>Get the picture</h3><p>Tracks below the radar, as a complement.</p></div>
+  </div>
+  <ul class="clean">
+    <li><b>Everyday:</b> find illegal drone flights. <b>Crisis:</b> warn people in the drone’s path.</li>
+    <li><b>Money:</b> boxes at cost; a service fee per box and month. Our cost ≈ $8+ per box and month <span class="lbl sim">ASSUMPTION</span>; the price would be set in a pilot.</li>
+    <li><b>Size:</b> ~78,000 roof boxes for Taiwan’s urban areas at one box per 250 m <span class="lbl sim">ASSUMPTION</span>; drone detection market ≈ $2.8 bn by 2030 (MarketsandMarkets).</li>
+    <li><b>Box:</b> ≈ $345 in off-the-shelf parts today, no core part made in the PRC; ≈ $100 target at volume <span class="lbl sim">ASSUMPTION</span>.</li>
+    <li><b>Rules:</b> video never leaves the box, data is never sold, a person always approves a public warning.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="eyebrow" style="color:var(--cyan)">Honest status</div>
+  <h2>What is not proven yet</h2>
+  <ul class="clean">
+    <li><b>Outdoor range, false-alarm rate, coverage between high-rises:</b> not measured yet. That is the first job of a pilot on real roofs.</li>
+    <li><b>Outdoor fusion:</b> outdoors, the alert came from one station plus an image check. Indoors, three cameras fuse into one 3D track.</li>
+    <li><b>Night and fog:</b> cheap cameras do not see the sky at night. Future: thermal cameras and microphones in the same box.</li>
+    <li><b>Who pays:</b> the city as buyer is our assumption; a pilot would test it.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="eyebrow real">Result · Honorable Mention</div>
+  <h2>Team 08</h2>
+  <p class="lead" style="margin-bottom:0">Honorable Mention at the Taiwan Defense Tech Hackathon 2026. The jury rated originality and scalability highest.</p>
+  <div class="team">
+    <div>Edoardo Dominikus<span>camera nodes, fusion controller, outdoor test</span></div>
+    <div>Sean Ching<span>camera nodes, fusion controller, outdoor test</span></div>
+    <div><a href="https://www.linkedin.com/in/janbarkemeyer">Jan Barkemeyer</a><span>dashboard, simulation, videos, deck, strategy</span></div>
+    <div>Robin Fischer<span>deck, strategy, pitch on stage</span></div>
+  </div>
+</section>
+
+<footer>
+  Meerkat Sentry · Team 08 · Taiwan Defense Tech Hackathon, Taipei 2026.<br>
+  The city view is a simulation of a fictional site. No weapon control: warnings and team allocation only. © 2026 Team 08, all rights reserved.
+</footer>
+
+</div>
+</body>
+</html>
